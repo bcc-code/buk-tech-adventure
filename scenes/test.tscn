@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://csf640cfj635j"]
+[gd_scene load_steps=42 format=3 uid="uid://csf640cfj635j"]
 
 [ext_resource type="Texture2D" uid="uid://cao6s04l72tca" path="res://resources/kenney_sketch-combined-tilelist.png" id="1_5a38f"]
 [ext_resource type="Script" path="res://scenes/Player.gd" id="2_au7qf"]
 [ext_resource type="Texture2D" uid="uid://i4h5j6tvdrac" path="res://resources/characters/male_base.png" id="3_1neyq"]
+[ext_resource type="Script" path="res://scenes/AnimateMove.gd" id="4_riucg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xn1uj"]
 
@@ -4568,6 +4569,7 @@ texture_region_size = Vector2i(256, 352)
 9:23/0/physics_layer_0/angular_velocity = 0.0
 9:23/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 9:23/0/physics_layer_1/angular_velocity = 0.0
+9:23/0/physics_layer_1/polygon_0/points = PackedVector2Array(-117, 0, 0, -55, 117, 0, 0, 55)
 10:23/0 = 0
 10:23/0/texture_origin = Vector2i(0, 110)
 10:23/0/terrain_set = 1
@@ -4576,6 +4578,7 @@ texture_region_size = Vector2i(256, 352)
 10:23/0/physics_layer_0/angular_velocity = 0.0
 10:23/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 10:23/0/physics_layer_1/angular_velocity = 0.0
+10:23/0/physics_layer_1/polygon_0/points = PackedVector2Array(-117, 0, 0, -55, 117, 0, 0, 55)
 10:23/0/terrains_peering_bit/bottom_left_side = 4
 10:23/0/terrains_peering_bit/top_right_side = 4
 11:23/0 = 0
@@ -4586,6 +4589,7 @@ texture_region_size = Vector2i(256, 352)
 11:23/0/physics_layer_0/angular_velocity = 0.0
 11:23/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 11:23/0/physics_layer_1/angular_velocity = 0.0
+11:23/0/physics_layer_1/polygon_0/points = PackedVector2Array(-117, 0, 0, -55, 117, 0, 0, 55)
 11:23/0/terrains_peering_bit/bottom_right_side = 4
 11:23/0/terrains_peering_bit/top_left_side = 4
 12:23/0 = 0
@@ -4596,6 +4600,7 @@ texture_region_size = Vector2i(256, 352)
 12:23/0/physics_layer_0/angular_velocity = 0.0
 12:23/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 12:23/0/physics_layer_1/angular_velocity = 0.0
+12:23/0/physics_layer_1/polygon_0/points = PackedVector2Array(-117, 0, 0, -55, 117, 0, 0, 55)
 12:23/0/terrains_peering_bit/bottom_left_side = 4
 12:23/0/terrains_peering_bit/top_right_side = 4
 13:23/0 = 0
@@ -4606,6 +4611,7 @@ texture_region_size = Vector2i(256, 352)
 13:23/0/physics_layer_0/angular_velocity = 0.0
 13:23/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 13:23/0/physics_layer_1/angular_velocity = 0.0
+13:23/0/physics_layer_1/polygon_0/points = PackedVector2Array(-117, 0, 0, -55, 117, 0, 0, 55)
 13:23/0/terrains_peering_bit/bottom_right_side = 4
 13:23/0/terrains_peering_bit/top_left_side = 4
 14:23/0 = 0
@@ -6150,6 +6156,11 @@ animations = [{
 "name": &"southwest",
 "speed": 5.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7t8ad")
@@ -6200,23 +6211,27 @@ layer_3/z_index = 3
 layer_3/tile_data = PackedInt32Array()
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1827, 1011)
 collision_mask = 0
 motion_mode = 1
 slide_on_ceiling = false
 floor_stop_on_slope = false
 platform_on_leave = 2
-platform_floor_layers = 4294901761
+platform_floor_layers = 1
+platform_wall_layers = 2
 script = ExtResource("2_au7qf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+y_sort_enabled = true
 scale = Vector2(1, 0.5)
 shape = SubResource("CircleShape2D_wgoqk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_2lcsw")
-animation = &"east"
-frame_progress = 0.754013
+animation = &"stand"
 offset = Vector2(0, -55)
+script = ExtResource("4_riucg")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
