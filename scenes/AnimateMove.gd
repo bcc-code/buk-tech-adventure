@@ -19,6 +19,8 @@ func _process(delta):
 	var current_position = get_parent().position
 	var velocity = delta * (current_position - previous_position)
 	var normal = velocity.normalized()
+	var current_frame = frame
+	var current_frame_progress = frame_progress
 	speed_scale = max(velocity.length() * animation_speed, 0.5)
 	play()
 	if (normal.x > dead_zone):
@@ -43,4 +45,6 @@ func _process(delta):
 		elif (frame == 0):
 			# When no longer movin, the animation continues until it's on the first frame again.
 			pause()
+	# Frame and progress are reset when the animation changes, but in our case, that's wrong.
+	set_frame_and_progress(current_frame, current_frame_progress)
 	previous_position = current_position
