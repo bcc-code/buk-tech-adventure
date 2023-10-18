@@ -1,21 +1,25 @@
 extends AnimatedSprite2D
 
-var previous_position = Vector2()
+@export var animation_speed = 20
+@export var initial_orientation = 'south'
+
+# There's a trigonometric optimal value that I don't know. This is close enough.
 var dead_zone = 0.25
-var speed = 20
+# Save position state for motion calculation
+var previous_position = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	previous_position = get_parent().position
-	set_animation('south')
+	set_animation(initial_orientation)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var current_position = get_parent().position
-	var motion = delta * (current_position - previous_position)
-	var normal = motion.normalized()
-	speed_scale = max(motion.length() * speed, 0.5)
+	var velocity = delta * (current_position - previous_position)
+	var normal = velocity.normalized()
+	speed_scale = max(velocity.length() * animation_speed, 0.5)
 	play()
 	if (normal.x > dead_zone):
 		if (normal.y > dead_zone):
@@ -37,5 +41,6 @@ func _process(delta):
 		elif (normal.y < -dead_zone):
 			set_animation('north')
 		elif (frame == 0):
+			# When no longer movin, the animation continues until it's on the first frame again.
 			pause()
 	previous_position = current_position

@@ -1,13 +1,16 @@
 extends CharacterBody2D
 
-const MOTION_SPEED = 234 # Pixels/second, 1 tile = 234 pixels
-const FRICTION_FACTOR = 0.75
+## In pixels / second
+@export var player_speed = 234
+## Friction is per frame. You may slide weirdly on very low FPS
+@export var friction = 0.75
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	var motion = Input.get_vector("move_west", "move_east", "move_north", "move_south")
 	# The isometric tiles y/x aspect is 1/2, so we must scale the motion by that factor
 	motion.y /= 2
-	velocity += motion.normalized() * MOTION_SPEED
+	# No delta factor required, move_and_slide already does that!
+	velocity += motion.normalized() * player_speed
 	# Apply friction.
-	velocity *= FRICTION_FACTOR
+	velocity *= friction
 	move_and_slide()
