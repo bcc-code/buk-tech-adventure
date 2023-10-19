@@ -43,7 +43,7 @@ func _process(delta):
 		elif (normal.y < -dead_zone):
 			set_animation('north')
 		elif (frame == 0):
-			# When no longer movin, the animation continues until it's on the first frame again.
+			# When no longer moving, the animation continues until it's on the first frame again.
 			pause()
 	# Frame and progress are reset when the animation changes, but in our case, that's wrong.
 	set_frame_and_progress(current_frame, current_frame_progress)
