@@ -1,11 +1,12 @@
 # BUK Tech Adventure
 
-- Create root Scene 2D
-- Add TileMap
-- [Inspector » Tile Set] Create new Tile Set for the TileMap
-- [Inspector » Layers] Name the first layer and enable it
-- [Inspector » Layers ] Enable Y Sort for the first layer
-- [Inspector] In the drop-down that says TileMap, select Tile Set instead.
-- [Inspector » Tile Set] Change:
-  - Tile Shape to Isometric
-  - Tile layout to 
+Base game for the Tech activity at BUK Høstcamp 2023
+
+## Features
+
+- [x] Tilemap to easily build a world
+- [x] Player character
+  - [x] Player character can only walk on marked parts of the tiles
+- [x] NPC
+- [ ] Dialogue mechanism for quests
+- [ ] Inventory mechanism

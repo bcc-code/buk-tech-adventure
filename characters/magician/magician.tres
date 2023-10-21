@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://f0eu3y7qanw3"]
 
-[ext_resource type="Texture2D" uid="uid://c51s57iguekkq" path="res://resources/characters/magician.png" id="sprite_sheet"]
+[ext_resource type="Texture2D" uid="uid://c51s57iguekkq" path="res://resources/clint-bellanger/magician.png" id="sprite_sheet"]
 
 [sub_resource type="AtlasTexture" id="step_east_1"]
 atlas = ExtResource("sprite_sheet")
