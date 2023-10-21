@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceqfw1t0qo1ua"]
+
+[ext_resource type="SpriteFrames" uid="uid://f0eu3y7qanw3" path="res://characters/magician/magician.tres" id="1_qjrtk"]
+[ext_resource type="Script" path="res://characters/animate.gd" id="2_nta4p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5g1dp"]
+size = Vector2(48, 24)
+
+[node name="magician" type="CharacterBody2D"]
+
+[node name="sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("location_parent")]
+sprite_frames = ExtResource("1_qjrtk")
+animation = &"idle-south"
+offset = Vector2(0, -55)
+script = ExtResource("2_nta4p")
+location_parent = NodePath("..")
+move_animation_prefix = "idle"
+
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5g1dp")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://csf640cfj635j"]
+[gd_scene load_steps=8 format=3 uid="uid://csf640cfj635j"]
 
 [ext_resource type="Texture2D" uid="uid://cao6s04l72tca" path="res://resources/kenney_sketch-combined-tilelist.png" id="1_5a38f"]
 [ext_resource type="PackedScene" uid="uid://ccx5plagqbxeg" path="res://characters/player/player.tscn" id="2_tx5fa"]
 [ext_resource type="PackedScene" uid="uid://cx4u8cbwtohu8" path="res://characters/farmer/farmer.tscn" id="2_wmwm8"]
+[ext_resource type="PackedScene" uid="uid://ceqfw1t0qo1ua" path="res://characters/magician/magician.tscn" id="4_evc2l"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xn1uj"]
 
@@ -5942,3 +5943,6 @@ position = Vector2(2457, 935)
 
 [node name="farmer" parent="Map" instance=ExtResource("2_wmwm8")]
 position = Vector2(2574, 880)
+
+[node name="magician" parent="." instance=ExtResource("4_evc2l")]
+position = Vector2(1755, 165)
