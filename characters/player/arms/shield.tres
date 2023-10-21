@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=50 format=3 uid="uid://dsys2cbv3vufn"]
+[gd_resource type="SpriteFrames" load_steps=58 format=3 uid="uid://dsys2cbv3vufn"]
 
 [ext_resource type="Texture2D" uid="uid://cbtmlhfd7eumb" path="res://resources/characters/male_shield.png" id="sprite_sheet"]
 
@@ -33,6 +33,38 @@ region = Rect2(1024, 1792, 256, 256)
 [sub_resource type="AtlasTexture" id="attack_west"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_east"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_north"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_northeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_northwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_south"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_southeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_southwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="hit_west"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1536, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="step_east_1"]
 atlas = ExtResource("sprite_sheet")
@@ -258,6 +290,70 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_east")
+}],
+"loop": true,
+"name": &"hit-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_north")
+}],
+"loop": true,
+"name": &"hit-north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_northeast")
+}],
+"loop": true,
+"name": &"hit-northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_northwest")
+}],
+"loop": true,
+"name": &"hit-northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_south")
+}],
+"loop": true,
+"name": &"hit-south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_southeast")
+}],
+"loop": true,
+"name": &"hit-southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_southwest")
+}],
+"loop": true,
+"name": &"hit-southwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("hit_west")
+}],
+"loop": true,
+"name": &"hit-west",
 "speed": 5.0
 }, {
 "frames": [{
