@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://jc12pbvwvulg" path="res://tilesets/kenney_sketch.tres" id="1_gtw81"]
 [ext_resource type="PackedScene" uid="uid://ccx5plagqbxeg" path="res://characters/player/player.tscn" id="2_tx5fa"]
 [ext_resource type="PackedScene" uid="uid://cx4u8cbwtohu8" path="res://characters/farmer/farmer.tscn" id="2_wmwm8"]
-[ext_resource type="Script" path="res://characters/tilemap_constraint.gd" id="3_tt0pu"]
+[ext_resource type="Script" path="res://characters/collision_layer_constraint.gd" id="3_cygec"]
 [ext_resource type="PackedScene" uid="uid://ceqfw1t0qo1ua" path="res://characters/magician/magician.tscn" id="4_evc2l"]
 
 [node name="desert" type="Node2D"]
@@ -38,11 +38,13 @@ layer_3/y_sort_origin = 220
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
-[node name="player" parent="Map" instance=ExtResource("2_tx5fa")]
+[node name="player" parent="Map" node_paths=PackedStringArray("floor_constraint") instance=ExtResource("2_tx5fa")]
 position = Vector2(2223, 825)
+floor_constraint = NodePath("floor_constraint")
 
 [node name="floor_constraint" type="Node" parent="Map/player"]
-script = ExtResource("3_tt0pu")
+script = ExtResource("3_cygec")
+constrain_to_layers = 16
 
 [node name="farmer" parent="Map" instance=ExtResource("2_wmwm8")]
 position = Vector2(2574, 880)
