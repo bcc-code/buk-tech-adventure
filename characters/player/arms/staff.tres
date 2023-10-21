@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=42 format=3 uid="uid://sbqobjfchbl3"]
+[gd_resource type="SpriteFrames" load_steps=50 format=3 uid="uid://sbqobjfchbl3"]
 
 [ext_resource type="Texture2D" uid="uid://d20w7eot1amtc" path="res://resources/characters/male_staff.png" id="sprite_sheet"]
 
@@ -65,6 +65,38 @@ region = Rect2(0, 1792, 256, 256)
 [sub_resource type="AtlasTexture" id="step_west_1"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_east"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_north"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_northeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_northwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_south"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_southeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_southwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="special_west"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1280, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="step_east_2"]
 atlas = ExtResource("sprite_sheet")
@@ -291,6 +323,70 @@ animations = [{
 "loop": true,
 "name": &"idle-west",
 "speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_east")
+}],
+"loop": true,
+"name": &"special-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_north")
+}],
+"loop": true,
+"name": &"special-north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_northeast")
+}],
+"loop": true,
+"name": &"special-northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_northwest")
+}],
+"loop": true,
+"name": &"special-northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_south")
+}],
+"loop": true,
+"name": &"special-south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_southeast")
+}],
+"loop": true,
+"name": &"special-southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_southwest")
+}],
+"loop": true,
+"name": &"special-southwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("special_west")
+}],
+"loop": true,
+"name": &"special-west",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,

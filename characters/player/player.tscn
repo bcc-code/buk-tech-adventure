@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_v84h1"]
 [ext_resource type="Script" path="res://characters/sort_animation_layers.gd" id="2_f5ur1"]
 [ext_resource type="SpriteFrames" uid="uid://dsvifdqx7w33q" path="res://characters/player/armour/no_armour.tres" id="2_fm7vo"]
-[ext_resource type="SpriteFrames" uid="uid://c46el2hd3bu6o" path="res://characters/player/arms/longbow.tres" id="3_tud8j"]
 [ext_resource type="Script" path="res://characters/animate.gd" id="4_01usd"]
+[ext_resource type="SpriteFrames" uid="uid://dsys2cbv3vufn" path="res://characters/player/arms/shield.tres" id="4_4pibd"]
 [ext_resource type="SpriteFrames" uid="uid://sbqobjfchbl3" path="res://characters/player/arms/staff.tres" id="6_eh6m0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8jele"]
@@ -34,8 +34,7 @@ body_child = NodePath("body")
 right_hand_child = NodePath("right_hand")
 
 [node name="left_hand" type="AnimatedSprite2D" parent="sprites" node_paths=PackedStringArray("location_parent")]
-visible = false
-sprite_frames = ExtResource("3_tud8j")
+sprite_frames = ExtResource("4_4pibd")
 animation = &"attack-east"
 offset = Vector2(0, -55)
 script = ExtResource("4_01usd")
