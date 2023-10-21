@@ -16,10 +16,10 @@
 [ext_resource type="Texture2D" uid="uid://cr0tk0p01sggv" path="res://resources/characters/Farmer/Walk/7_Farmer_Walk_strip15.png" id="15_8kgtq"]
 [ext_resource type="Texture2D" uid="uid://c2jut2lgucxyr" path="res://resources/characters/Farmer/Walk/5_Farmer_Walk_strip15.png" id="16_pvtth"]
 [ext_resource type="Texture2D" uid="uid://4kwbu8dulcud" path="res://resources/characters/Farmer/Walk/4_Farmer_Walk_strip15.png" id="17_6pt83"]
-[ext_resource type="Script" path="res://characters/farmer/animate_farmer.gd" id="18_2nubi"]
+[ext_resource type="Script" path="res://characters/animate.gd" id="17_vm0b7"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1d40b"]
-radius = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8s3"]
+size = Vector2(48, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_787it"]
 atlas = ExtResource("2_eqtn6")
@@ -1168,21 +1168,22 @@ animations = [{
 "speed": 15.0
 }]
 
-[node name="Farmer" type="CharacterBody2D"]
+[node name="farmer" type="CharacterBody2D"]
+z_index = 1
 y_sort_enabled = true
 collision_mask = 0
 motion_mode = 1
 platform_floor_layers = 4294901761
 platform_wall_layers = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 0.5)
-shape = SubResource("CircleShape2D_1d40b")
+[node name="shape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rn8s3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("location_parent")]
 scale = Vector2(1, 0.85)
 sprite_frames = SubResource("SpriteFrames_xilna")
 animation = &"idle-south"
 autoplay = "idle-south"
-offset = Vector2(0, -55)
-script = ExtResource("18_2nubi")
+offset = Vector2(-27.355, -55)
+script = ExtResource("17_vm0b7")
+location_parent = NodePath("..")

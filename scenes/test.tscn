@@ -5869,9 +5869,11 @@ texture_region_size = Vector2i(256, 352)
 [sub_resource type="TileSet" id="TileSet_j88dq"]
 tile_shape = 1
 tile_size = Vector2i(234, 110)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 64
+physics_layer_0/collision_mask = 0
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_xn1uj")
-physics_layer_1/collision_layer = 2
+physics_layer_1/collision_layer = 128
+physics_layer_1/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.501961, 1, 0.25098, 1)
@@ -5906,7 +5908,7 @@ sources/0 = SubResource("TileSetAtlasSource_ci1s0")
 
 [node name="desert" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Map" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_j88dq")
 format = 2
@@ -5935,8 +5937,8 @@ layer_3/y_sort_origin = 330
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
-[node name="Farmer" parent="." instance=ExtResource("2_wmwm8")]
-position = Vector2(2574, 880)
+[node name="player" parent="Map" instance=ExtResource("2_tx5fa")]
+position = Vector2(2457, 935)
 
-[node name="Player" parent="." instance=ExtResource("2_tx5fa")]
-position = Vector2(2587, 859)
+[node name="farmer" parent="Map" instance=ExtResource("2_wmwm8")]
+position = Vector2(2574, 880)
