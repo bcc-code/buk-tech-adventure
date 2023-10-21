@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=58 format=3 uid="uid://c46el2hd3bu6o"]
+[gd_resource type="SpriteFrames" load_steps=66 format=3 uid="uid://c46el2hd3bu6o"]
 
 [ext_resource type="Texture2D" uid="uid://che5ayh6u2mj1" path="res://resources/characters/male_longbow.png" id="sprite_sheet"]
 
@@ -33,6 +33,38 @@ region = Rect2(1024, 1792, 256, 256)
 [sub_resource type="AtlasTexture" id="attack_west"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_east"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_north"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_northeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_northwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_south"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_southeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_southwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_west"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="hit_east"]
 atlas = ExtResource("sprite_sheet")
@@ -290,6 +322,70 @@ animations = [{
 }],
 "loop": true,
 "name": &"attack-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_east")
+}],
+"loop": true,
+"name": &"dead-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_north")
+}],
+"loop": true,
+"name": &"dead-north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_northeast")
+}],
+"loop": true,
+"name": &"dead-northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_northwest")
+}],
+"loop": true,
+"name": &"dead-northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_south")
+}],
+"loop": true,
+"name": &"dead-south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_southeast")
+}],
+"loop": true,
+"name": &"dead-southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_southwest")
+}],
+"loop": true,
+"name": &"dead-southwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_west")
+}],
+"loop": true,
+"name": &"dead-west",
 "speed": 5.0
 }, {
 "frames": [{

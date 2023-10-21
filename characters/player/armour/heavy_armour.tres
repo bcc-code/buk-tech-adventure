@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=58 format=3 uid="uid://b6yyrm6ikibch"]
+[gd_resource type="SpriteFrames" load_steps=66 format=3 uid="uid://b6yyrm6ikibch"]
 
 [ext_resource type="Texture2D" uid="uid://caisch3erymvy" path="res://resources/characters/male_heavy.png" id="sprite_sheet"]
 
@@ -34,6 +34,38 @@ region = Rect2(1024, 1792, 256, 256)
 atlas = ExtResource("sprite_sheet")
 region = Rect2(1024, 0, 256, 256)
 
+[sub_resource type="AtlasTexture" id="dead_east"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_north"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_northeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_northwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_south"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_southeast"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_southwest"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="dead_west"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(1792, 0, 256, 256)
+
 [sub_resource type="AtlasTexture" id="hit_east"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(1536, 1024, 256, 256)
@@ -65,6 +97,38 @@ region = Rect2(1536, 1792, 256, 256)
 [sub_resource type="AtlasTexture" id="hit_west"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_east_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_north_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northeast_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northwest_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_south_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southeast_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southwest_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_west_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="special_east"]
 atlas = ExtResource("sprite_sheet")
@@ -98,10 +162,6 @@ region = Rect2(1280, 1792, 256, 256)
 atlas = ExtResource("sprite_sheet")
 region = Rect2(1280, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="step_east_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 1024, 256, 256)
-
 [sub_resource type="AtlasTexture" id="step_east_2"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(256, 1024, 256, 256)
@@ -113,10 +173,6 @@ region = Rect2(512, 1024, 256, 256)
 [sub_resource type="AtlasTexture" id="step_east_4"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 1024, 256, 256)
-
-[sub_resource type="AtlasTexture" id="step_north_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="step_north_2"]
 atlas = ExtResource("sprite_sheet")
@@ -130,10 +186,6 @@ region = Rect2(512, 512, 256, 256)
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 512, 256, 256)
 
-[sub_resource type="AtlasTexture" id="step_northeast_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 768, 256, 256)
-
 [sub_resource type="AtlasTexture" id="step_northeast_2"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(256, 768, 256, 256)
@@ -145,10 +197,6 @@ region = Rect2(512, 768, 256, 256)
 [sub_resource type="AtlasTexture" id="step_northeast_4"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 768, 256, 256)
-
-[sub_resource type="AtlasTexture" id="step_northwest_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="step_northwest_2"]
 atlas = ExtResource("sprite_sheet")
@@ -162,10 +210,6 @@ region = Rect2(512, 256, 256, 256)
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="step_south_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 1536, 256, 256)
-
 [sub_resource type="AtlasTexture" id="step_south_2"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(256, 1536, 256, 256)
@@ -177,10 +221,6 @@ region = Rect2(512, 1536, 256, 256)
 [sub_resource type="AtlasTexture" id="step_south_4"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 1536, 256, 256)
-
-[sub_resource type="AtlasTexture" id="step_southeast_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 1280, 256, 256)
 
 [sub_resource type="AtlasTexture" id="step_southeast_2"]
 atlas = ExtResource("sprite_sheet")
@@ -194,10 +234,6 @@ region = Rect2(512, 1280, 256, 256)
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 1280, 256, 256)
 
-[sub_resource type="AtlasTexture" id="step_southwest_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 1792, 256, 256)
-
 [sub_resource type="AtlasTexture" id="step_southwest_2"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(256, 1792, 256, 256)
@@ -209,10 +245,6 @@ region = Rect2(512, 1792, 256, 256)
 [sub_resource type="AtlasTexture" id="step_southwest_4"]
 atlas = ExtResource("sprite_sheet")
 region = Rect2(768, 1792, 256, 256)
-
-[sub_resource type="AtlasTexture" id="step_west_1"]
-atlas = ExtResource("sprite_sheet")
-region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="step_west_2"]
 atlas = ExtResource("sprite_sheet")
@@ -294,6 +326,70 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("dead_east")
+}],
+"loop": true,
+"name": &"dead-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_north")
+}],
+"loop": true,
+"name": &"dead-north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_northeast")
+}],
+"loop": true,
+"name": &"dead-northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_northwest")
+}],
+"loop": true,
+"name": &"dead-northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_south")
+}],
+"loop": true,
+"name": &"dead-south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_southeast")
+}],
+"loop": true,
+"name": &"dead-southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_southwest")
+}],
+"loop": true,
+"name": &"dead-southwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("dead_west")
+}],
+"loop": true,
+"name": &"dead-west",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("hit_east")
 }],
 "loop": true,
@@ -355,6 +451,70 @@ animations = [{
 "loop": true,
 "name": &"hit-west",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_east_1")
+}],
+"loop": true,
+"name": &"idle-east",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_north_1")
+}],
+"loop": true,
+"name": &"idle-north",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_northeast_1")
+}],
+"loop": true,
+"name": &"idle-northeast",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_northwest_1")
+}],
+"loop": true,
+"name": &"idle-northwest",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_south_1")
+}],
+"loop": true,
+"name": &"idle-south",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_southeast_1")
+}],
+"loop": true,
+"name": &"idle-southeast",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_southwest_1")
+}],
+"loop": true,
+"name": &"idle-southwest",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_west_1")
+}],
+"loop": true,
+"name": &"idle-west",
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -555,68 +715,4 @@ animations = [{
 "loop": true,
 "name": &"walk-west",
 "speed": 15.0
-},  {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_east_1")
-}],
-"loop": true,
-"name": &"idle-east",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_north_1")
-}],
-"loop": true,
-"name": &"idle-north",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_northeast_1")
-}],
-"loop": true,
-"name": &"idle-northeast",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_northwest_1")
-}],
-"loop": true,
-"name": &"idle-northwest",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_south_1")
-}],
-"loop": true,
-"name": &"idle-south",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_southeast_1")
-}],
-"loop": true,
-"name": &"idle-southeast",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_southwest_1")
-}],
-"loop": true,
-"name": &"idle-southwest",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("step_west_1")
-}],
-"loop": true,
-"name": &"idle-west",
-"speed": 1.0
 }]
