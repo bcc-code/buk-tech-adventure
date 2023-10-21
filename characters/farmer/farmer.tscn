@@ -1169,7 +1169,6 @@ animations = [{
 }]
 
 [node name="farmer" type="CharacterBody2D"]
-z_index = 1
 y_sort_enabled = true
 collision_mask = 0
 motion_mode = 1
