@@ -9,6 +9,10 @@ extends Node
 ## In pixels
 @export var maximum_check_distance = 32
 
+func _read():
+	if (constrain_to_layers == 0):
+		print('No layers in constraint!')
+
 func stay_within_collision(character):
 	for i in collision_iteration_max_depth:
 		var ray = PhysicsRayQueryParameters2D.create(character.global_position + character.velocity.normalized() * minimum_check_distance, character.global_position + character.velocity.normalized() * maximum_check_distance, constrain_to_layers)

@@ -7,11 +7,7 @@ extends CharacterBody2D
 ## Difference in direction (degrees) between input direction and movement direction.
 @export var input_offset_angle = 45
 ## Floor constraint
-@export var floor_constraint: Node
-
-func _ready():
-	if !floor_constraint:
-		floor_constraint = $floor_constraint
+@export var movement_constraint: Node
 
 func _physics_process(_delta):
 	var motion = Input.get_vector("move_west", "move_east", "move_north", "move_south").rotated(deg_to_rad(input_offset_angle))
@@ -21,6 +17,6 @@ func _physics_process(_delta):
 	velocity += motion.normalized() * player_speed
 	# Apply friction.
 	velocity *= slide_factor
-	if floor_constraint:
-		floor_constraint.stay_within_collision(self)
+	if movement_constraint:
+		movement_constraint.stay_within_collision(self)
 	move_and_slide()

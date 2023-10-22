@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1bvun2118wqn"]
+
+[ext_resource type="PackedScene" uid="uid://ccx5plagqbxeg" path="res://characters/human/human.tscn" id="1_fe1r1"]
+[ext_resource type="Script" path="res://characters/movement.gd" id="2_njvqx"]
+[ext_resource type="Script" path="res://characters/collision_layer_constraint.gd" id="3_su5fm"]
+
+[node name="player" node_paths=PackedStringArray("movement_constraint") instance=ExtResource("1_fe1r1")]
+script = ExtResource("2_njvqx")
+movement_constraint = NodePath("movement_constraint")
+
+[node name="movement_constraint" type="Node" parent="." index="2"]
+script = ExtResource("3_su5fm")
+constrain_to_layers = 16
+
+[node name="camera" type="Camera2D" parent="." index="3"]

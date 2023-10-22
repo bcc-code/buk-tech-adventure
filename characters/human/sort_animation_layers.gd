@@ -25,3 +25,13 @@ func sort_children(animation: String):
 		elif (animation.ends_with('south')):
 			move_child(left_hand_child, 0)
 			move_child(body_child, 0)
+
+func hit():
+	body_child.current_animation = 'hit'
+	right_hand_child.current_animation = 'hit'
+	left_hand_child.current_animation = 'hit'
+
+func attack():
+	body_child.current_animation = 'attack'
+	right_hand_child.current_animation = 'attack'
+	left_hand_child.current_animation = 'attack'
