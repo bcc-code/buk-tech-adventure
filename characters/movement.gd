@@ -9,6 +9,11 @@ extends CharacterBody2D
 ## Floor constraint
 @export var movement_constraint: Node
 
+var entry_point: String
+
+func _ready():
+	global.player = self
+
 func _physics_process(_delta):
 	var motion = Input.get_vector("move_west", "move_east", "move_north", "move_south").rotated(deg_to_rad(input_offset_angle))
 	# The isometric tiles y/x aspect is 1/2, so we must scale the motion by that factor
