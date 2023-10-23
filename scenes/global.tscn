@@ -8,3 +8,4 @@ script = ExtResource("1_i05vp")
 
 [node name="player" parent="." instance=ExtResource("2_422gj")]
 position = Vector2(705.206, 2089.86)
+input_offset_angle = 0

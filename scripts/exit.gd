@@ -5,6 +5,9 @@ extends Area2D
 
 func _ready():
 	connect("body_entered", body_entered)
+	if !to_scene:
+		$sprite.animation = "none"
+		$sprite.play()
 
 func body_entered(_body: Node2D):
 	var player = global.player

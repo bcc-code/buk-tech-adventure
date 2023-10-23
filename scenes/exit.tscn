@@ -1,10 +1,60 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr81rfllunbm6"]
+[gd_scene load_steps=9 format=3 uid="uid://dr81rfllunbm6"]
 
 [ext_resource type="Script" path="res://scripts/exit.gd" id="1_ig83x"]
+[ext_resource type="Texture2D" uid="uid://5ntljpecb56m" path="res://resources/clint-bellanger/teleport_rune.png" id="2_v4c5r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn7qt"]
+radius = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxdim"]
+atlas = ExtResource("2_v4c5r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qf014"]
+atlas = ExtResource("2_v4c5r")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cexaw"]
+atlas = ExtResource("2_v4c5r")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx4ux"]
+atlas = ExtResource("2_v4c5r")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgos2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxdim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qf014")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cexaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx4ux")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}]
 
 [node name="exit" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_ig83x")
 
-[node name="shape" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-117, 0, 0, -55, 117, 0, 0, 55)
+[node name="shape" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_bn7qt")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wgos2")
+autoplay = "default"

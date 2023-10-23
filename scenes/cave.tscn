@@ -42,9 +42,10 @@ layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array()
 
 [node name="exit" parent="." instance=ExtResource("3_fj1vn")]
-position = Vector2(-273, 79)
+position = Vector2(-234, 55)
 to_scene = "res://scenes/test.tscn"
 entrance_name = "from_cave"
 
 [node name="entrance" parent="." instance=ExtResource("4_xbjpk")]
+position = Vector2(-177, 26)
 map_start_point = true

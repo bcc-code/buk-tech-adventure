@@ -3,5 +3,4 @@
 [ext_resource type="Script" path="res://scripts/entrance.gd" id="1_f1gug"]
 
 [node name="entrance" type="Node2D"]
-position = Vector2(-117, 0)
 script = ExtResource("1_f1gug")
