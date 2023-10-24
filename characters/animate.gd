@@ -6,6 +6,7 @@ extends AnimatedSprite2D
 @export var idle_speed_maximum = 0.01
 @export var idle_animation_prefix = 'idle'
 @export var move_animation_prefix = 'walk'
+@export var use_global_position = true
 
 var current_animation = 'idle'
 
@@ -20,7 +21,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var current_position = location_parent.position
+	# Get parent's current global position or (local) position
+	var current_position = location_parent.global_position if use_global_position else location_parent.position
 	var velocity = delta * (current_position - previous_position)
 	var speed = velocity.length()
 	var current_frame = frame
