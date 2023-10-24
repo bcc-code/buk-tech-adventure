@@ -93,3 +93,36 @@ You can study the _test_ and _cave_ scenes to see how this works. The _test_ sce
 The _cave_ scene has an _entrance_ and _exit_ too. The _entrance_ has _Map Start Point_ set. This means that if you directly start the _cave_ scene, the player will spawn there. It is also the place where the player will spawn when you enter from the _test_ map through the *to_cave* exit, because that exit refers to this entrance by its name _entrance_.
 
 The _exit_ has _To Scene_ set to the _test_ scene and has _Entrance Name_ set to *from_cave*. This ensures that when you exit the cave, the player will appear at the entrance called *from_cave* in the test scene. If no _Entrance Name_ was set, you would end up at the map start point instead.
+
+## NPCs
+
+To add an NPC you can drag a _human_ or _farmer_ scene from the _characters_ folder into the scene. The player is just a special _human_. Besides the normal _human_ features it has a camera attached, and it can be moved using WASD or the arrow keys.
+
+## Equipment
+
+Once you've added a human, you'll see that it's quite boring, just like the player. To customise the look, you can right click the node in the _Scene_ tab to the left, and check _Editable children_. This will show all the children of the scene in yellow. This indicates that those are children part of the _human_ scene, but that you can override their settings for this specific _human_.
+
+You can see that the _human_ has two nodes; *left_hand* and *right_hand* that are not visible. Click the closed eye icon to the right of those nodes, and you'll see that the human is now holding a sword and shield.
+
+You can also click the _body_ node and in the _Inspector_ tab section _Animation_ change the _Sprite Frame_ by right clicking it and selecting _Quick Load_. There are four valid selections for the body animation:
+
+- *default*: The standard ochre
+- *heavy_armour*: Heavy infantry metal armour.
+- *light_armour*: Archer style leather armour
+- *no_armour*: Clothing
+
+You can also do the same for the *right_hand* and *left_hand*
+
+Valid values are:
+
+- _longsword_ and _staff_ for the *right_hand*
+- _longbow_ and _shield_ for the *left_hand*
+
+With these options you can make the three character archetypes:
+
+- Warrior: *heavy_armour* for the *body*, *longsword* for the *right_hand*, *shield* for the *left_hand*
+- Archer: *light_armour* for the *body*, *longbow* for the *left_hand*
+- Wizard: *no_armour* for the *body*, *staff* for the *right_hand*
+
+There are of course more possible combinations, but keep in mind that putting an animation on the wrong node will not look correct. E.g. you can't really put the *shield* in the *right_hand* or the *staff* in the *left_hand*. You can assemble a kind of correct looking character when you put everything wrong, e.g. if you choose *sword* for the *body* and the *no_armour* for the *right_hand*, but it will look weird when the character move. The scripts on the nodes will automatically adapt the animation to the direction of movement. The script on the *sprites* node will shuffling the child nodes into the correct order. When the character walks to the west, its right side is facing the camera and the order of the nodes is changed to have the *right_hand* shown on top of the *body* which is shown on top of the *left_hand*. When the character walks to the east, the order is reversed.
+
