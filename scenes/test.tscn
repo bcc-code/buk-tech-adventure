@@ -1,12 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://csf640cfj635j"]
+[gd_scene load_steps=10 format=3 uid="uid://csf640cfj635j"]
 
 [ext_resource type="TileSet" uid="uid://jc12pbvwvulg" path="res://tilesets/kenney_sketch.tres" id="1_gtw81"]
 [ext_resource type="PackedScene" uid="uid://cx4u8cbwtohu8" path="res://characters/farmer/farmer.tscn" id="2_wmwm8"]
 [ext_resource type="PackedScene" uid="uid://ccx5plagqbxeg" path="res://characters/human/human.tscn" id="3_n344e"]
 [ext_resource type="PackedScene" uid="uid://ceqfw1t0qo1ua" path="res://characters/magician/magician.tscn" id="4_evc2l"]
 [ext_resource type="SpriteFrames" uid="uid://b6yyrm6ikibch" path="res://characters/human/armour/heavy_armour.tres" id="6_auiqj"]
+[ext_resource type="Script" path="res://characters/follow-path.gd" id="6_j4w8m"]
 [ext_resource type="PackedScene" uid="uid://bsfsww3t0lscu" path="res://scenes/entrance.tscn" id="7_5wgc1"]
 [ext_resource type="PackedScene" uid="uid://dr81rfllunbm6" path="res://scenes/exit.tscn" id="7_8pldk"]
+
+[sub_resource type="Curve2D" id="Curve2D_yanuj"]
+_data = {
+"points": PackedVector2Array(-122.759, 31.748, 122.759, -31.748, 0, 0, -51.8551, -28.5732, 51.8551, 28.5732, -117, 165, -53.9716, -3.1748, 53.9716, 3.1748, 117, 275, -28.5732, -28.5732, 28.5732, 28.5732, 585, 55, -32.8063, -19.0488, 32.8063, 19.0488, -234, 440, -1.05827, -41.2724, 1.05827, 41.2724, 117, 275, 0, 0, 0, 0, 0, 220, -15.874, 39.1559, 15.874, -39.1559, -117, 55, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
 
 [node name="world" type="TileMap"]
 y_sort_enabled = true
@@ -54,25 +61,38 @@ position = Vector2(3978, 330)
 to_scene = "res://scenes/cave.tscn"
 entrance_name = "entrance"
 
-[node name="magician" parent="." instance=ExtResource("4_evc2l")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(4652, 366)
-
 [node name="farmer" parent="." instance=ExtResource("2_wmwm8")]
 position = Vector2(3627, 1705)
-
-[node name="human" parent="." instance=ExtResource("3_n344e")]
-position = Vector2(1287, 55)
-
-[node name="body" parent="human/sprites" index="0"]
-sprite_frames = ExtResource("6_auiqj")
-
-[node name="left_hand" parent="human/sprites" index="2"]
-visible = true
 
 [node name="entrance" parent="." instance=ExtResource("7_5wgc1")]
 position = Vector2(702, 2090)
 map_start_point = true
 
-[editable path="human"]
+[node name="magician" parent="." instance=ExtResource("4_evc2l")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(4680, 330)
+
+[node name="patrol_route" type="Path2D" parent="."]
+top_level = true
+y_sort_enabled = true
+position = Vector2(1287, 55)
+curve = SubResource("Curve2D_yanuj")
+
+[node name="knight_along_path" type="PathFollow2D" parent="patrol_route"]
+y_sort_enabled = true
+rotates = false
+script = ExtResource("6_j4w8m")
+
+[node name="knight" parent="patrol_route/knight_along_path" instance=ExtResource("3_n344e")]
+
+[node name="body" parent="patrol_route/knight_along_path/knight/sprites" index="0"]
+sprite_frames = ExtResource("6_auiqj")
+
+[node name="right_hand" parent="patrol_route/knight_along_path/knight/sprites" index="1"]
+visible = true
+
+[node name="left_hand" parent="patrol_route/knight_along_path/knight/sprites" index="2"]
+visible = true
+
+[editable path="patrol_route/knight_along_path/knight"]

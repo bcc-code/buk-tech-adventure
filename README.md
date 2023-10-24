@@ -126,3 +126,17 @@ With these options you can make the three character archetypes:
 
 There are of course more possible combinations, but keep in mind that putting an animation on the wrong node will not look correct. E.g. you can't really put the *shield* in the *right_hand* or the *staff* in the *left_hand*. You can assemble a kind of correct looking character when you put everything wrong, e.g. if you choose *sword* for the *body* and the *no_armour* for the *right_hand*, but it will look weird when the character move. The scripts on the nodes will automatically adapt the animation to the direction of movement. The script on the *sprites* node will shuffling the child nodes into the correct order. When the character walks to the west, its right side is facing the camera and the order of the nodes is changed to have the *right_hand* shown on top of the *body* which is shown on top of the *left_hand*. When the character walks to the east, the order is reversed.
 
+## Moving a character
+
+The characters we have prepared for you already have some nice things set up:
+
+- They have movement animations for each of the eight cardinal + ordinal directions
+- If you make the character move across the world, the animation sprite is automatically updated to the correct direction based on the direction of movement.
+
+You can make a character move along a path by combining the _Path2D_, _PathFollow2D_ nodes and adding the *follow_path* script to the _PathFollow2D_ node. Study the way the knight patrols along the castle in the _test_ scene to see how this is set-up.
+
+Pay special attention to these things:
+
+- In the _Inspector_ tab under _CanvasItem_ » _Ordering_ the option _Y Sort Enabled_ is checked for the *patrol_route*, the *knight_along_path* and the *knight*. If your NPC seems to slide under world tiles, this option is not set on any of those nodes.
+- In the _Inspector_ tab under _CanvasItem_ » _Visiblity_ the option _Top Level_ is checked for the *patrol_route*. This ensures that when you draw the route, you see it on top of everything, otherwise the lines you draw can be drawn behind tiles, which makes it hard to see what you're doing.
+- When you select a path such as the *patrol_route* a floating path editing toolbar shows up in the top centre of the Godot UI.
