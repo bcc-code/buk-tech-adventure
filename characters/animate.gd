@@ -3,7 +3,7 @@ extends AnimatedSprite2D
 ## Node used to get position
 @export var location_parent: CharacterBody2D
 @export var direction = 'south'
-@export var idle_speed_maximum = 0.05
+@export var idle_speed_maximum = 0.01
 @export var idle_animation_prefix = 'idle'
 @export var move_animation_prefix = 'walk'
 
