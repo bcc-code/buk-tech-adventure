@@ -7,6 +7,8 @@ extends AnimatedSprite2D
 @export var idle_animation_prefix = 'idle'
 @export var move_animation_prefix = 'walk'
 @export var use_global_position = true
+## Seems good for humans
+@export var animation_speed_factor = 81
 
 var current_animation = 'idle'
 
@@ -25,6 +27,7 @@ func _process(delta):
 	var current_position = location_parent.global_position if use_global_position else location_parent.position
 	var velocity = delta * (current_position - previous_position)
 	var speed = velocity.length()
+	speed_scale = speed * sqrt(animation_speed_factor)
 	var current_frame = frame
 	var current_frame_progress = frame_progress
 	if speed > idle_speed_maximum:
