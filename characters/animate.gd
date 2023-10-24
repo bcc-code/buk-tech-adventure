@@ -28,9 +28,7 @@ func _process(delta):
 	if speed > idle_speed_maximum:
 		current_animation = move_animation_prefix
 		# Map velocity angle to circle segment from 0 (northwest) clockwise to 7 (west)
-		match int(round(velocity.angle() * 8 / TAU - 0.5)) + 3:
-			# Can happen due to rounding error in PI / TAU
-			-1: direction = 'west'
+		match int(ceil(velocity.angle() * 8 / TAU - 0.5)) + 3:
 			0: direction = 'northwest'
 			1: direction = 'north'
 			2: direction = 'northeast'
