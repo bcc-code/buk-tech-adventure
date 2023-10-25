@@ -1,5 +1,6 @@
-[gd_scene load_steps=172 format=3 uid="uid://cx4u8cbwtohu8"]
+[gd_scene load_steps=173 format=3 uid="uid://cx4u8cbwtohu8"]
 
+[ext_resource type="Script" path="res://characters/farmer/farmer.gd" id="1_e2uii"]
 [ext_resource type="Texture2D" uid="uid://ct008vy0csupw" path="res://resources/farmer/idle/0_Farmer_Idle_strip4.png" id="2_eqtn6"]
 [ext_resource type="Texture2D" uid="uid://i5c2mpne4jql" path="res://resources/farmer/idle/2_Farmer_Idle_strip4.png" id="3_2dsvw"]
 [ext_resource type="Texture2D" uid="uid://yge8ixio88lq" path="res://resources/farmer/idle/1_Farmer_Idle_strip4.png" id="4_ms8m4"]
@@ -1174,6 +1175,7 @@ collision_mask = 0
 motion_mode = 1
 platform_floor_layers = 4294901761
 platform_wall_layers = 2
+script = ExtResource("1_e2uii")
 
 [node name="shape" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rn8s3")
