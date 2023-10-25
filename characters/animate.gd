@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
 ## Node used to get position
-@export var location_parent: CharacterBody2D
+@export var location_parent: Node2D
 @export var direction = 'south'
 @export var idle_speed_maximum = 0.01
 @export var idle_animation_prefix = 'idle'
@@ -17,14 +17,14 @@ var previous_position = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	previous_position = location_parent.position
+	previous_position = location_parent.global_transform.get_origin() if use_global_position else location_parent.transform.get_origin()
 	set_animation(current_animation + '-' + direction)
 	play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Get parent's current global position or (local) position
-	var current_position = location_parent.global_position if use_global_position else location_parent.position
+	var current_position = location_parent.global_transform.get_origin() if use_global_position else location_parent.transform.get_origin()
 	var velocity = delta * (current_position - previous_position)
 	var speed = velocity.length()
 	speed_scale = speed * sqrt(animation_speed_factor)
