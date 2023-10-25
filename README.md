@@ -137,6 +137,7 @@ You can make a character move along a path by combining the _Path2D_, _PathFollo
 
 Pay special attention to these things:
 
+- In the _Inspector_ tab under _PathFollow2D_ the option _Rotates_ must be unchecked for the *patrol_route*.
 - In the _Inspector_ tab under _CanvasItem_ » _Ordering_ the option _Y Sort Enabled_ is checked for the *patrol_route*, the *knight_along_path* and the *knight*. If your NPC seems to slide under world tiles, this option is not set on any of those nodes.
-- In the _Inspector_ tab under _CanvasItem_ » _Visiblity_ the option _Top Level_ is checked for the *patrol_route*. This ensures that when you draw the route, you see it on top of everything, otherwise the lines you draw can be drawn behind tiles, which makes it hard to see what you're doing.
+- In the _Inspector_ tab under _CanvasItem_ » _Visiblity_ the option _Top Level_ is checked for the *patrol_route*, but **only while editing**. This ensures that when you draw the route, you see it on top of everything, otherwise the lines you draw can be drawn behind tiles, which makes it hard to see what you're doing. After you're done editing, disable it again, as this setting carries over to the _knight_ making him float on top of the castle gate.
 - When you select a path such as the *patrol_route* a floating path editing toolbar shows up in the top centre of the Godot UI.
