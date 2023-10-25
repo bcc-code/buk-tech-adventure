@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwycga4a5pbro"]
+[gd_scene load_steps=7 format=3 uid="uid://cwycga4a5pbro"]
 
 [ext_resource type="TileSet" uid="uid://jc12pbvwvulg" path="res://tilesets/kenney_sketch.tres" id="1_po0ck"]
 [ext_resource type="PackedScene" uid="uid://dr81rfllunbm6" path="res://scenes/exit.tscn" id="3_fj1vn"]
+[ext_resource type="Script" path="res://characters/follow-path.gd" id="4_fkp5o"]
 [ext_resource type="PackedScene" uid="uid://bsfsww3t0lscu" path="res://scenes/entrance.tscn" id="4_xbjpk"]
+[ext_resource type="PackedScene" uid="uid://b8ewa54teorli" path="res://characters/slime/slime.tscn" id="5_3bbvv"]
+
+[sub_resource type="Curve2D" id="Curve2D_lveam"]
+_data = {
+"points": PackedVector2Array(5.29133, 40.2141, -5.29133, -40.2141, 0, -110, -61.3795, 15.874, 61.3795, -15.874, 468, -330, 7.40787, -49.7385, -7.40787, 49.7385, 1404, 55, 95.244, -3.1748, -95.244, 3.1748, 819, 330, -35.5957, 36.4856, 35.5957, -36.4856, 351, 110, -118.667, 26.6667, 118.667, -26.6667, 702, 110, 25.3333, 98.6667, -25.3333, -98.6667, 936, -55, 152, -69.3333, -152, 69.3333, 468, -220, -50.6667, 132, 50.6667, -132, 0, -110)
+}
+point_count = 9
 
 [node name="world" type="TileMap"]
 y_sort_enabled = true
@@ -49,3 +57,36 @@ entrance_name = "from_cave"
 [node name="entrance" parent="." instance=ExtResource("4_xbjpk")]
 position = Vector2(-177, 26)
 map_start_point = true
+
+[node name="path" type="Path2D" parent="."]
+y_sort_enabled = true
+curve = SubResource("Curve2D_lveam")
+
+[node name="slime_along_path" type="PathFollow2D" parent="path"]
+y_sort_enabled = true
+position = Vector2(0, -110)
+rotates = false
+script = ExtResource("4_fkp5o")
+speed = 80
+
+[node name="slime" parent="path/slime_along_path" instance=ExtResource("5_3bbvv")]
+
+[node name="slime2_along_path" type="PathFollow2D" parent="path"]
+y_sort_enabled = true
+position = Vector2(1353.63, 14.8491)
+progress = 1474.96
+rotates = false
+script = ExtResource("4_fkp5o")
+speed = 125
+
+[node name="slime2" parent="path/slime2_along_path" instance=ExtResource("5_3bbvv")]
+
+[node name="slime3_along_path" type="PathFollow2D" parent="path"]
+y_sort_enabled = true
+position = Vector2(572.67, 114.274)
+progress = 2949.92
+rotates = false
+script = ExtResource("4_fkp5o")
+speed = 180
+
+[node name="slime3" parent="path/slime3_along_path" instance=ExtResource("5_3bbvv")]
