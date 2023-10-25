@@ -1,0 +1,270 @@
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://c7j4olcincvns"]
+
+[ext_resource type="Texture2D" uid="uid://bsmg65307htao" path="res://resources/clint-bellanger/slime.png" id="sprite_sheet"]
+
+[sub_resource type="AtlasTexture" id="step_east_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_east_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_east_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_east_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 1024, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_north_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_north_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_north_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_north_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northeast_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northeast_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northeast_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northeast_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northwest_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northwest_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northwest_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_northwest_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_south_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_south_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_south_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_south_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 1536, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southeast_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southeast_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southeast_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southeast_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 1280, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5.0b8"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southwest_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southwest_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_southwest_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 1792, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_west_1"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_west_2"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_west_3"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="step_west_4"]
+atlas = ExtResource("sprite_sheet")
+region = Rect2(768, 0, 256, 256)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_east_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_east_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_east_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_east_4")
+}],
+"loop": true,
+"name": &"idle-east",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_north_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_north_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_north_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_north_4")
+}],
+"loop": true,
+"name": &"idle-north",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_northeast_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_northeast_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_northeast_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_northeast_4")
+}],
+"loop": true,
+"name": &"idle-northeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_northwest_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_northwest_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_northwest_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_northwest_4")
+}],
+"loop": true,
+"name": &"idle-northwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_south_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_south_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_south_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_south_4")
+}],
+"loop": true,
+"name": &"idle-south",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_southeast_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_southeast_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_southeast_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_southeast_4")
+}],
+"loop": true,
+"name": &"idle-southeast",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5.0b8")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_southwest_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_southwest_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_southwest_4")
+}],
+"loop": true,
+"name": &"idle-southwest",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("step_west_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_west_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_west_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("step_west_4")
+}],
+"loop": true,
+"name": &"idle-west",
+"speed": 5.0
+}]

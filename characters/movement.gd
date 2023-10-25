@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 ## In pixels / second
-@export var player_speed = 234
+@export var speed = 234
 ## Slide factor is calculated per frame. You may slide weirdly on very low FPS
 @export var slide_factor = 0.75
 ## Difference in direction (degrees) between input direction and movement direction.
@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	# The isometric tiles y/x aspect is 1/2, so we must scale the motion by that factor
 	motion.y /= 2
 	# No delta factor required, move_and_slide already does that!
-	velocity += motion.normalized() * player_speed
+	velocity += motion.normalized() * speed
 	# Apply friction.
 	velocity *= slide_factor
 	if movement_constraint:

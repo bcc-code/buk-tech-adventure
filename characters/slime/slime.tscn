@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8ewa54teorli"]
+
+[ext_resource type="SpriteFrames" uid="uid://c7j4olcincvns" path="res://characters/slime/slime.tres" id="1_7tblh"]
+[ext_resource type="Script" path="res://characters/slime/slimy.gd" id="1_lii8v"]
+[ext_resource type="Script" path="res://characters/animate.gd" id="2_o1go4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3dpo"]
+radius = 30.0
+
+[node name="slime" type="Area2D"]
+script = ExtResource("1_lii8v")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." node_paths=PackedStringArray("location_parent")]
+y_sort_enabled = true
+sprite_frames = ExtResource("1_7tblh")
+animation = &"idle-west"
+offset = Vector2(0, -45)
+script = ExtResource("2_o1go4")
+location_parent = NodePath("..")
+move_animation_prefix = "idle"
+
+[node name="shape" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.5)
+shape = SubResource("CircleShape2D_f3dpo")
