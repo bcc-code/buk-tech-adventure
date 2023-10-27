@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgtsjkruuimt2"]
+
+[ext_resource type="Texture2D" uid="uid://b6h2i3e0yhu6v" path="res://resources/crops/furrow_cropWheat_E_CROPPED.png" id="1_60gkn"]
+[ext_resource type="Script" path="res://crop.gd" id="1_q63r4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ii0xw"]
+radius = 47.1699
+
+[node name="Crop" type="StaticBody2D"]
+script = ExtResource("1_q63r4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_60gkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5, 15)
+shape = SubResource("CircleShape2D_ii0xw")

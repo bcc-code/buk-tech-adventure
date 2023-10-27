@@ -1,13 +1,25 @@
 ~ farmer
 
-Farmer: [[Hi|Hello|Howdy]] traveller, good to see a new face around here...
-- You seem tired. Is there anything I can help with?
-	Farmer: Well, if you're willing, I could use some help with the crops. My back's been complaining more than usual, and these fields won't harvest themselves.
-	-  I'd be happy to help. What do you need me to do?
-		Farmer: Just go over there and gather the ripe wheat, then bring it back to me. Be careful not to damage the soil too much.
-		- Consider it done. Take it easy, and let me handle the rest.
-			Farmer: Thanks a lot, young one. Don't overexert yourself now, you hear? And watch out for the critters, they can get a bit restless around the crops.
+if global.harvested_crops > 0 and global.quest_status == "STARTED"
+	Farmer: Hey, back so soon?
+	- Here is the wheat you requested
+		Farmer: Thank you very much! This will save me a lot of time.
+		Farmer: See you around!
+		set global.quest_status = "FINISHED"
+		set global.harvested_crops = 0
+	- Goodbye => END
+elif global.quest_status == "NONE"
+	Farmer: [[Hi|Hello|Howdy]] traveller, good to see a new face around here...
+	- You seem tired. Is there anything I can help with?
+		Farmer: Well, if you're willing, I could use some help with the crops. My back's been complaining more than usual, and these fields won't harvest themselves.
+		-  I'd be happy to help. What do you need me to do?
+			Farmer: Just go over there and gather the ripe wheat, then bring it back to me. Be careful not to damage the soil too much.
+			- Consider it done. Take it easy, and let me handle the rest.
+				Farmer: Thanks a lot, young one. Don't overexert yourself now, you hear?
+				set global.quest_status = "STARTED"
+			- Goodbye => END
 		- Goodbye => END
 	- Goodbye => END
-- Goodbye => END
-=> END
+	=> END
+elif global.quest_status == "FINISHED":
+	Farmer: Hello friend, thanks for helping out...
