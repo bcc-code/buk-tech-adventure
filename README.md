@@ -8,7 +8,7 @@ Base game for the Tech activity at BUK Høstcamp 2023
 - [x] Player character
   - [x] Player character can only walk on marked parts of the tiles
 - [x] NPC
-- [ ] Dialogue mechanism for quests
+- [x] Dialogue mechanism for quests
 - [ ] Inventory mechanism
 
 
